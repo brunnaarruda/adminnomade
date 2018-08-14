@@ -5,5 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.ufrpe.brunna.adminnomades.pessoa.gui.CadastrarPerfilActivity">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+        <EditText
+            android:id="@+id/nomeRegistroId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"/>
+        <EditText
+            android:id="@+id/cpfRegistroId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CPF"/>
+        <EditText
+            android:id="@+id/telefoneRegistroId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefone"/>
+        <EditText
+            android:id="@+id/emailRegistroId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"/>
+        <Button
+            android:id="@+id/botaoRegistroPerfilId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.R;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Button;
 
 
 public class PerfilActivity extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView telefonePerfil;
     private TextView emailPerfil;
     private Button botaoEditar;
+    private Button botaoDeletar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class PerfilActivity extends AppCompatActivity {
         telefonePerfil = findViewById(R.id.telefonePerfilId);
         emailPerfil = findViewById(R.id.emailPerfilId);
         botaoEditar = findViewById(R.id.botaoEditarId);
+        botaoDeletar = findViewById(R.id.botaoPerfilDeletarId);
     }
 
     public void editar(){

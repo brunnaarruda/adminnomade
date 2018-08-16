@@ -1,8 +1,15 @@
 package br.ufrpe.brunna.adminnomades.pessoa.dominio;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 import br.ufrpe.brunna.adminnomades.endereco.dominio.Endereco;
 
+@Entity(tableName = "tb_pessoa")
 public class Pessoa {
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
     private int id;
     private String nome;
     private String email;

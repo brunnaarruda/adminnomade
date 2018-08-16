@@ -22,7 +22,8 @@
         <activity android:name=".pessoa.gui.MainActivity" />
         <activity android:name=".pessoa.gui.CadastrarPerfilActivity" />
         <activity android:name=".endereco.gui.AlterarEndereco" />
-        <activity android:name=".endereco.gui.CadastrarEndereco"></activity>
+        <activity android:name=".endereco.gui.CadastrarEndereco" />
+        <activity android:name=".endereco.gui.EnderecoListActivity"></activity>
     </application>
 
 </manifest>

@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.ufrpe.brunna.adminnomades.endereco.gui.AlterarEndereco">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="10dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/nomeEditarEnderecoId"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ruaEditarId"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:hint="Rua"/>
+
+        <EditText
+            android:id="@+id/numeroEditarId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numero" />
+
+        <EditText
+            android:id="@+id/cidadeEditarId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cidade"/>
+
+        <Button
+            android:id="@+id/botaoEditarEnderecoId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EDITAR ENDEREÇO"/>
         <Button
             android:id="@+id/botaoDeletarEnderecoId"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:text="DELETAR ENDEREÇO"/>
     </LinearLayout>
-
-
-    <EditText
-        android:id="@+id/ruaEditarId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <EditText
-        android:id="@+id/numeroEditarId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/cidadeEditarId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/botaoEditarEnderecoId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,8 @@ import android.R;
 import android.widget.Button;
 import android.widget.EditText;
 
+import br.ufrpe.brunna.adminnomades.infra.Sessao;
+
 public class EditarPerfilActivity extends AppCompatActivity {
     private EditText nomeEditar;
     private EditText telefoneEditar;
@@ -18,11 +20,17 @@ public class EditarPerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_perfil);
         setTela();
-    }
     private void setTela(){
-        nomeEditar = findViewById(R.id.nomeId);
-        telefoneEditar = findViewById(R.id.telefonePessoaId);
-        emailEditar = findViewById(R.id.emailPessoaId);
-        cpfEditar = findViewById(R.id.cpfPessoaId);
-        alterar = findViewById(R.id.btAlterarId);
+            nomeEditar = findViewById(R.id.nomeId);
+            telefoneEditar = findViewById(R.id.telefonePessoaId);
+            emailEditar = findViewById(R.id.emailPessoaId);
+            cpfEditar = findViewById(R.id.cpfPessoaId);
+            alterar = findViewById(R.id.btAlterarId);
+            setPessoa();
+    }
+    private void setPessoa(){
+        Pessoa pessoa = Sessao.instance.getPessoa();
+        alterarNome = setTex
+        }
+
 }

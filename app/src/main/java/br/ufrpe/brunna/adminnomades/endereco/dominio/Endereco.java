@@ -1,6 +1,13 @@
 package br.ufrpe.brunna.adminnomades.endereco.dominio;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
+@Entity(tableName = "tb_endereco")
 public class Endereco {
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
     private int id;
     private String rua;
     private String numero;

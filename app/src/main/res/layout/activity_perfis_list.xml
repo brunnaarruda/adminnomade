@@ -28,11 +28,13 @@
             android:layout_height="wrap_content"
             android:text="Novo Perfil"/>
     </LinearLayout>
+
     <ListView
         android:id="@+id/listPerfisId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
     </ListView>
 </LinearLayout>
 </android.support.constraint.ConstraintLayout>

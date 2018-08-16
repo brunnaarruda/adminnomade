@@ -43,5 +43,6 @@ public class CadastrarPerfilActivity extends AppCompatActivity {
         pessoa.setNome(nome);
         pessoa.setTelefone(telefone);
         pessoa.setEmail(email);
+        finish();
     }
 }

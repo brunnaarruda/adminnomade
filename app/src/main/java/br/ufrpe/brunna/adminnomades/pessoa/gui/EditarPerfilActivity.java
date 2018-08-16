@@ -28,9 +28,5 @@ public class EditarPerfilActivity extends AppCompatActivity {
             alterar = findViewById(R.id.btAlterarId);
             setPessoa();
     }
-    private void setPessoa(){
-        Pessoa pessoa = Sessao.instance.getPessoa();
-        alterarNome = setTex
-        }
 
 }

@@ -13,8 +13,8 @@ import br.ufrpe.brunna.adminnomades.pessoa.dominio.Pessoa;
 
 @Dao
 public interface EnderecoDao {
-    @Query("SELECT * FROM tb_endereco")
-    public List<Endereco>
+    @Query("SELECT * FROM tb_endereco WHERE id = :id")
+    public List<Endereco> getTodosEnderecos(id);
 
     @Insert
     void cadastrarEnderecoDao(Endereco endereco);

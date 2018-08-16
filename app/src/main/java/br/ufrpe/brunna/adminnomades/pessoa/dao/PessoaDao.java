@@ -9,10 +9,7 @@ import java.util.List;
 
 public interface PessoaDao {
     @Query("SELECT * FROM tb_pessoa")
-    public List<Pessoa> getTodosNomes();
-
-    @Query("SELECT * FROM tb_pessoa WHERE id = :id")
-    public List<Pessoa> getPessoaId(String id);
+    public  List<Pessoa> getTodasPessoas();
 
     @Insert
     void inserirPessoaDao(Pessoa pessoa);

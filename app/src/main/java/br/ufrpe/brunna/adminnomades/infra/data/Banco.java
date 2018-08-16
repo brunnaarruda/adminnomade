@@ -5,6 +5,7 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import br.ufrpe.brunna.adminnomades.endereco.dao.EnderecoDao;
+import br.ufrpe.brunna.adminnomades.infra.NomadesApp;
 import br.ufrpe.brunna.adminnomades.pessoa.dao.PessoaDao;
 import br.ufrpe.brunna.adminnomades.pessoa.dominio.Pessoa;
 import br.ufrpe.brunna.adminnomades.endereco.dominio.Endereco;
@@ -14,16 +15,12 @@ public abstract class Banco extends RoomDatabase{
     private static Banco instance;
 
     public abstract EnderecoDao enderecoDao();
-
     public abstract PessoaDao pessoaDao();
 
-    public static Banco getInMemoryDatabase(Context context) {
+    public static Banco getDb() {
         if (instance == null) {
-            instance = Room.inMemoryDatabaseBuilder(context.getApplicationContext(), Banco.class).allowMainThreadQueries().build();
+            instance = Room.inMemoryDatabaseBuilder(NomadesApp.getContext(), Banco.class).allowMainThreadQueries().build();
         }
         return instance;
-    }
-    public static void destroyInstance(){
-        instance = null;
     }
 }

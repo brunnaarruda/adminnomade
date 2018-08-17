@@ -14,7 +14,6 @@ import br.ufrpe.brunna.adminnomades.infra.Sessao;
 import br.ufrpe.brunna.adminnomades.pessoa.gui.PerfilActivity;
 
 public class CadastrarEndereco extends AppCompatActivity {
-    private TextView nomeRegistroEndereco;
     private EditText ruaRegistro;
     private EditText numeroRegistro;
     private EditText cidadeRegistro;
@@ -33,7 +32,6 @@ public class CadastrarEndereco extends AppCompatActivity {
         });
     }
     private void setTela(){
-        nomeRegistroEndereco = findViewById(R.id.nomeRegistroEnderecoId);
         ruaRegistro = findViewById(R.id.ruaRegistroId);
         numeroRegistro = findViewById(R.id.numeroRegistroId);
         cidadeRegistro = findViewById(R.id.cidadeRegistroId);
@@ -47,7 +45,12 @@ public class CadastrarEndereco extends AppCompatActivity {
         endereco.setCidade(cidadeRegistro.getText().toString().trim());
         endereco.setIdPessoa(Sessao.instance.getPessoa().getId());
         enderecoNegocio.inserirEndereco(endereco);
-        startActivity(new Intent(CadastrarEndereco.this, PerfilActivity.class));
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(CadastrarEndereco.this, EnderecoListActivity.class));
         finish();
     }
 }

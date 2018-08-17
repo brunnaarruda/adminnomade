@@ -14,7 +14,6 @@ public class Pessoa {
     private String nome;
     private String email;
     private String telefone;
-    private Endereco endereco;
 
     public int getId() {
         return id;
@@ -47,13 +46,4 @@ public class Pessoa {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
 }

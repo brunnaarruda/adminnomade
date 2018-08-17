@@ -1,10 +1,13 @@
 package br.ufrpe.brunna.adminnomades.endereco.dominio;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+import br.ufrpe.brunna.adminnomades.pessoa.dominio.Pessoa;
+import static android.arch.persistence.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "tb_endereco")
+@Entity(tableName = "tb_endereco", foreignKeys = @ForeignKey(onDelete = CASCADE, entity = Pessoa.class, parentColumns = "id",childColumns = "idPessoa"))
 public class Endereco {
     @PrimaryKey(autoGenerate = true)
     @NonNull

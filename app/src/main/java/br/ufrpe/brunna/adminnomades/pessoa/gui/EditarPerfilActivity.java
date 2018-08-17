@@ -3,11 +3,12 @@ package br.ufrpe.brunna.adminnomades.pessoa.gui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import br.ufrpe.brunna.adminnomades.R;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import br.ufrpe.brunna.adminnomades.R;
 import br.ufrpe.brunna.adminnomades.infra.Sessao;
 import br.ufrpe.brunna.adminnomades.pessoa.negocio.PessoaNegocio;
 
@@ -15,7 +16,6 @@ public class EditarPerfilActivity extends AppCompatActivity {
     private EditText nomeEditar;
     private EditText telefoneEditar;
     private EditText emailEditar;
-    private EditText cpfEditar;
     private Button botaoAlterar;
 
     @Override
@@ -34,8 +34,10 @@ public class EditarPerfilActivity extends AppCompatActivity {
         nomeEditar = findViewById(R.id.nomeEditarId);
         telefoneEditar = findViewById(R.id.telefoneEditarId);
         emailEditar = findViewById(R.id.emailEditarId);
-        cpfEditar = findViewById(R.id.cpfEditarId);
         botaoAlterar = findViewById(R.id.botaoAlterarPerfilId);
+        nomeEditar.setText(Sessao.instance.getPessoa().getNome());
+        telefoneEditar.setText(Sessao.instance.getPessoa().getTelefone());
+        emailEditar.setText(Sessao.instance.getPessoa().getEmail());
     }
     private void alterarPessoa(){
         PessoaNegocio pessoaNegocio = new PessoaNegocio();
@@ -43,6 +45,12 @@ public class EditarPerfilActivity extends AppCompatActivity {
         Sessao.instance.getPessoa().setTelefone(telefoneEditar.getText().toString().trim());
         Sessao.instance.getPessoa().setEmail(emailEditar.getText().toString().trim());
         pessoaNegocio.editarPessoa(Sessao.instance.getPessoa());
-        startActivity(new Intent(EditarPerfilActivity.this, PerfilActivity.class));
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(EditarPerfilActivity.this,PerfilActivity.class));
+        finish();
     }
 }

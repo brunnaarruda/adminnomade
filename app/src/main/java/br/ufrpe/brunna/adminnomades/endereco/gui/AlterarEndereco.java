@@ -6,14 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
 import br.ufrpe.brunna.adminnomades.R;
 import br.ufrpe.brunna.adminnomades.endereco.dominio.Endereco;
 import br.ufrpe.brunna.adminnomades.endereco.negocio.EnderecoNegocio;
 import br.ufrpe.brunna.adminnomades.infra.Sessao;
 
 public class AlterarEndereco extends AppCompatActivity {
-    private TextView nomeAlterarEndereco;
     private EditText ruaAlterar;
     private EditText numeroAlterar;
     private EditText cidadeAlterar;
@@ -39,12 +38,14 @@ public class AlterarEndereco extends AppCompatActivity {
         });
     }
     private void setTela(){
-        nomeAlterarEndereco = findViewById(R.id.nomeEditarEnderecoId);
         ruaAlterar = findViewById(R.id.ruaEditarId);
         numeroAlterar = findViewById(R.id.numeroEditarId);
         cidadeAlterar = findViewById(R.id.cidadeEditarId);
         botaoAlterarEndereco = findViewById(R.id.botaoEditarEnderecoId);
         botaoDeletarEndereco = findViewById(R.id.botaoDeletarEnderecoId);
+        ruaAlterar.setText(Sessao.instance.getEndereco().getRua());
+        numeroAlterar.setText(Sessao.instance.getEndereco().getNumero());
+        cidadeAlterar.setText(Sessao.instance.getEndereco().getCidade());
     }
     private void alterarEndereco(){
         Endereco endereco = new Endereco();
@@ -53,13 +54,18 @@ public class AlterarEndereco extends AppCompatActivity {
         endereco.setNumero(numeroAlterar.getText().toString().trim());
         endereco.setCidade(cidadeAlterar.getText().toString().trim());
         enderecoNegocio.editarEndereco(endereco);
-        startActivity(new Intent(AlterarEndereco.this, EnderecoListActivity.class));
-        finish();
+        onBackPressed();
     }
     private void deletarEndereco(){
         EnderecoNegocio enderecoNegocio = new EnderecoNegocio();
         enderecoNegocio.deletarEndereco(Sessao.instance.getEndereco());
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
         startActivity(new Intent(AlterarEndereco.this, EnderecoListActivity.class));
+        Sessao.instance.resetEndereco();
         finish();
     }
 }

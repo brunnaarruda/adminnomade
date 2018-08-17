@@ -1,5 +1,6 @@
 package br.ufrpe.brunna.adminnomades.pessoa.gui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import br.ufrpe.brunna.adminnomades.R;
@@ -43,6 +44,12 @@ public class CadastrarPerfilActivity extends AppCompatActivity {
         pessoa.setTelefone(telefone);
         pessoa.setEmail(email);
         pessoaNegocio.inserirPessoa(pessoa);
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(CadastrarPerfilActivity.this,PerfisListActivity.class));
         finish();
     }
 }

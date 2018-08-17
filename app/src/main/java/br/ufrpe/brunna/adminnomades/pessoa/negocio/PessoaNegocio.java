@@ -18,7 +18,7 @@ public class PessoaNegocio {
        Banco banco = Banco.getDb();
        banco.pessoaDao().deletarPessoaDao(pessoa);
    }
-   public List<Pessoa> listarPessoas(Pessoa pessoa){
+   public List<Pessoa> listarPessoas(){
         Banco banco = Banco.getDb();
         List<Pessoa> listaPessoa = banco.pessoaDao().getTodasPessoas();
         return listaPessoa;

@@ -2,7 +2,7 @@ package br.ufrpe.brunna.adminnomades.endereco.gui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.R;
+import br.ufrpe.brunna.adminnomades.R;
 
 public class EnderecoListActivity extends AppCompatActivity {
 

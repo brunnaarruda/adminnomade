@@ -3,7 +3,10 @@ package br.ufrpe.brunna.adminnomades.pessoa.gui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.R;
+import br.ufrpe.brunna.adminnomades.R;
+import br.ufrpe.brunna.adminnomades.endereco.gui.EnderecoListActivity;
+import br.ufrpe.brunna.adminnomades.infra.Sessao;
+import br.ufrpe.brunna.adminnomades.pessoa.negocio.PessoaNegocio;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
@@ -16,6 +19,7 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView emailPerfil;
     private Button botaoEditar;
     private Button botaoDeletar;
+    private Button botaoVerEndereco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,19 @@ public class PerfilActivity extends AppCompatActivity {
                 editar();
             }
         });
+        botaoDeletar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deletar();
+            }
+        });
+        botaoVerEndereco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            startActivity(new Intent(PerfilActivity.this, EnderecoListActivity.class));
+            finish();
+            }
+        });
     }
 
     private void setTela(){
@@ -35,12 +52,16 @@ public class PerfilActivity extends AppCompatActivity {
         cpfPerfil = findViewById(R.id.cpfPerfilId);
         telefonePerfil = findViewById(R.id.telefonePerfilId);
         emailPerfil = findViewById(R.id.emailPerfilId);
-        botaoEditar = findViewById(R.id.botaoEditarId);
-        botaoDeletar = findViewById(R.id.botaoPerfilDeletarId);
+        botaoEditar = findViewById(R.id.botaoAlterarPerfilId);
+        botaoDeletar = findViewById(R.id.botaoDeletarPerfilId);
+        botaoVerEndereco = findViewById(R.id.botaoVerEnderecoId);
     }
-
     public void editar(){
         startActivity(new Intent(PerfilActivity.this, EditarPerfilActivity.class));
         PerfilActivity.this.finish();
+    }
+    public void deletar(){
+        PessoaNegocio pessoaNegocio = new PessoaNegocio();
+        pessoaNegocio.deletarPessoa(Sessao.instance.getPessoa());
     }
 }

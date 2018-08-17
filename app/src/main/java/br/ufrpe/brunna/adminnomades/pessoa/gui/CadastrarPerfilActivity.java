@@ -2,11 +2,10 @@ package br.ufrpe.brunna.adminnomades.pessoa.gui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.R;
+import br.ufrpe.brunna.adminnomades.R;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
-
 import br.ufrpe.brunna.adminnomades.pessoa.dominio.Pessoa;
 import br.ufrpe.brunna.adminnomades.pessoa.negocio.PessoaNegocio;
 
@@ -32,7 +31,7 @@ public class CadastrarPerfilActivity extends AppCompatActivity {
         nomeRegistro = findViewById(R.id.nomeRegistroId);
         telefoneRegistro = findViewById(R.id.telefoneRegistroId);
         emailRegistro = findViewById(R.id.emailRegistroId);
-        botaoCadastrar = findViewById(R.id.botaoRegistroId);
+        botaoCadastrar = findViewById(R.id.botaoRegistroPerfilId);
     }
     private void cadastrar(){
         PessoaNegocio pessoaNegocio = new PessoaNegocio();
@@ -43,6 +42,7 @@ public class CadastrarPerfilActivity extends AppCompatActivity {
         pessoa.setNome(nome);
         pessoa.setTelefone(telefone);
         pessoa.setEmail(email);
+        pessoaNegocio.inserirPessoa(pessoa);
         finish();
     }
 }

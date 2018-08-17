@@ -9,6 +9,7 @@ public class Endereco {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
+    private int idPessoa;
     private String rua;
     private String numero;
     private String cidade;
@@ -19,6 +20,14 @@ public class Endereco {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdPessoa() {
+        return idPessoa;
+    }
+
+    public void setIdPessoa(int idPessoa){
+        this.idPessoa = idPessoa;
     }
 
     public String getRua() {

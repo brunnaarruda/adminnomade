@@ -1,6 +1,7 @@
 package br.ufrpe.brunna.adminnomades.infra;
 
 import br.ufrpe.brunna.adminnomades.pessoa.dominio.Pessoa;
+import br.ufrpe.brunna.adminnomades.endereco.dominio.Endereco;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +11,16 @@ public class Sessao {
     private final Map<String, Object> values = new HashMap<>();
 
     private Sessao(){}
+
+    public Endereco getEndereco(){
+        return(Endereco) values.get("sessao.endereco");
+    }
+
+    public void setEndereco(Endereco endereco){
+        setValue("sessao.endereco",endereco);
+    }
+
+    public void resetEndereco(){setEndereco(null);}
 
     public void setPessoa(Pessoa pessoa){
         setValue("sessao.pessoa", pessoa);
@@ -23,7 +34,7 @@ public class Sessao {
         values.put(key, value);
     }
 
-    public void reset(){
+    public void resetPessoa(){
         setPessoa(null);
     }
 }

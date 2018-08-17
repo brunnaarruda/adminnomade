@@ -10,16 +10,20 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="10dp">
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Editar Perfil"
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"/>
     <EditText
         android:id="@+id/nomeEditarId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nome"/>
-    <EditText
-        android:id="@+id/cpfEditarId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="CPF"/>
+
     <EditText
         android:id="@+id/telefoneEditarId"
         android:layout_width="match_parent"
@@ -31,6 +35,7 @@
         android:layout_height="wrap_content"
         android:hint="Email"/>
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/botaoAlterarPerfilId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

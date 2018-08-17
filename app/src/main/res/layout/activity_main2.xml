@@ -13,10 +13,13 @@
     android:gravity="center">
     <TextView
         android:id="@+id/tituloInicioId"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="SINDICATO DOS NÔMADES DE PERNAMBUCO"
-        android:layout_gravity="center"/>
+        android:layout_marginTop="90dp"
+        android:text="Sindicato dos Nômades de Pernambuco"
+        android:textSize="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"/>
     <Button
         android:id="@+id/botaoVerNomadesId"
         android:layout_width="match_parent"

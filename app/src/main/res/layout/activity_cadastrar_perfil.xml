@@ -10,16 +10,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Cadastrar Perfil"
+            android:gravity="center"/>
         <EditText
             android:id="@+id/nomeRegistroId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nome"/>
-        <EditText
-            android:id="@+id/cpfRegistroId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="CPF"/>
         <EditText
             android:id="@+id/telefoneRegistroId"
             android:layout_width="match_parent"
@@ -31,6 +33,7 @@
             android:layout_height="wrap_content"
             android:hint="Email"/>
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/botaoRegistroPerfilId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

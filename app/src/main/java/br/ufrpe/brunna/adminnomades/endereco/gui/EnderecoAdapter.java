@@ -19,18 +19,18 @@ public class EnderecoAdapter extends ArrayAdapter<Endereco> {
     private List<Endereco> enderecoList;
 
     public EnderecoAdapter(@NonNull List<Endereco> enderecoList){
-        super(NomadesApp.getContext(), R.layout.linha_endereco, enderecoList);
+        super(NomadesApp.getContext(), R.layout.item_endereco, enderecoList);
         this.enderecoList = enderecoList;
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) NomadesApp.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.linha_endereco, parent, false);
+        View view = inflater.inflate(R.layout.item_endereco, parent, false);
         TextView enderecoRua = view.findViewById(R.id.enderecoRuaId);
         enderecoRua.setText(enderecoList.get(position).getRua());
         TextView enderecoNumero = view.findViewById(R.id.enderecoNumeroId);
-        enderecoRua.setText(enderecoList.get(position).getNumero());
+        enderecoNumero.setText(enderecoList.get(position).getNumero());
         TextView enderecoCidade = view.findViewById(R.id.enderecoCidadeId);
         enderecoCidade.setText(enderecoList.get(position).getCidade());
         return view;

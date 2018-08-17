@@ -12,7 +12,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.ufrpe.brunna.adminnomades.R;
-import br.ufrpe.brunna.adminnomades.endereco.dominio.Endereco;
 import br.ufrpe.brunna.adminnomades.infra.NomadesApp;
 import br.ufrpe.brunna.adminnomades.pessoa.dominio.Pessoa;
 
@@ -20,14 +19,14 @@ public class PessoaAdapter extends ArrayAdapter<Pessoa> {
     private List<Pessoa> pessoaList;
 
     public PessoaAdapter(@NonNull List<Pessoa> pessoaList){
-        super(NomadesApp.getContext(), R.layout.linha_pessoa, pessoaList);
+        super(NomadesApp.getContext(), R.layout.item_pessoa, pessoaList);
         this.pessoaList = pessoaList;
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) NomadesApp.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.linha_pessoa, parent, false);
+        View view = inflater.inflate(R.layout.item_pessoa, parent, false);
         TextView pessoaNome = view.findViewById(R.id.pessoaNomeId);
         pessoaNome.setText(pessoaList.get(position).getNome());
         TextView pessoaTelefone = view.findViewById(R.id.pessoaTelefoneId);

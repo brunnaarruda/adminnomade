@@ -50,10 +50,10 @@ public class AlterarEndereco extends AppCompatActivity {
     private void alterarEndereco(){
         Endereco endereco = new Endereco();
         EnderecoNegocio enderecoNegocio = new EnderecoNegocio();
-        endereco.setRua(ruaAlterar.getText().toString().trim());
-        endereco.setNumero(numeroAlterar.getText().toString().trim());
-        endereco.setCidade(cidadeAlterar.getText().toString().trim());
-        enderecoNegocio.editarEndereco(endereco);
+        Sessao.instance.getEndereco().setRua(ruaAlterar.getText().toString().trim());
+        Sessao.instance.getEndereco().setNumero(numeroAlterar.getText().toString().trim());
+        Sessao.instance.getEndereco().setCidade(cidadeAlterar.getText().toString().trim());
+        enderecoNegocio.editarEndereco(Sessao.instance.getEndereco());
         onBackPressed();
     }
     private void deletarEndereco(){

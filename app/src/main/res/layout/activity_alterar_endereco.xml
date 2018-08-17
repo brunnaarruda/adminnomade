@@ -11,7 +11,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical">
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Editar Endereço"
+            android:gravity="center"/>
         <TextView
             android:id="@+id/nomeEditarEnderecoId"
             android:layout_width="match_parent"
@@ -36,6 +42,7 @@
             android:hint="Cidade"/>
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/botaoEditarEnderecoId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

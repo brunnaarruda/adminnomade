@@ -11,47 +11,57 @@
     android:orientation="vertical"
     android:layout_margin="10dp">
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/nomePerfilId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25dp">
 
     </TextView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:weightSum="2">
-        <Button
-            android:id="@+id/botaoAlterarPerfilId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/botaoDeletarPerfilId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp">
         <TextView
-            android:id="@+id/cpfPerfilId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Telefone:"
+            android:textSize="15dp"/>
         <TextView
             android:id="@+id/telefonePerfilId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textSize="15dp"/>
         <TextView
             android:id="@+id/emailPerfilId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="15dp"/>
     </LinearLayout>
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/botaoAlterarPerfilId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ALTERAR PERFIL"/>
+        <Button
+            android:id="@+id/botaoDeletarPerfilId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DELETAR PERFIL"/>
         <Button
             android:id="@+id/botaoVerEnderecoId"
             android:layout_width="match_parent"
